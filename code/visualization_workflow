@@ -1,0 +1,14 @@
+## visualization
+
+library(ggplot2)
+library(tidyr)  
+
+ggplot(a_e_data_long_waiting_time, aes(x = year, y = Attendance, color = waiting_time)) +
+  geom_line(size = 1) +
+  labs(title = "A&E Attendances between 2016 to 2023",
+       x = "year",
+       y = "Attendance",
+       color = "waiting_time") +
+  theme_minimal() +
+  scale_color_manual(values = c("Attendances.4.hours.or.less" = "blue",
+                                "Attendances.over.4.hours" = "red"))
