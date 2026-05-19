@@ -181,6 +181,9 @@ Potential future improvements include:
 - patient flow simulation modeling
 
 ---
+## SARIMA Forecasting of NHS A&E Waiting Times
+
+![SARIMA Forecast](figures/sarima_forecast.png)
 
 # Author
 
