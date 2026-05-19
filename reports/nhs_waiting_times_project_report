@@ -1,0 +1,313 @@
+# Optimising Patient Pathways and Reducing Waiting Times Within NHS England A&Es
+
+## A Business Analytics Project Report
+
+**Author:** Razan Aziz
+**Degree:** MSc Management and Business Analytics
+**Institution:** Oxford Brookes University
+**Project Type:** Healthcare Analytics & Forecasting
+
+---
+
+# Executive Summary
+
+NHS emergency departments across England have experienced growing operational pressure due to increasing patient demand, staffing shortages, and capacity constraints. Since 2013, the NHS has consistently failed to meet the national four-hour A&E target, with waiting times reaching record levels in recent years.
+
+This project applies business analytics techniques to investigate the operational, demographic, and systemic factors contributing to prolonged waiting times within NHS England A&Es. Using publicly available NHS datasets between 2016 and 2023, the study combines regression analysis, correlation analysis, and Seasonal ARIMA (SARIMA) forecasting to identify the major contributors to delays and forecast future waiting time trends.
+
+The analysis identified bed occupancy rates, workforce shortages, demographic disparities, and seasonal demand fluctuations as key contributors to prolonged waiting times. Forecasting analysis predicts that without intervention, over 800,000 patients per month may wait longer than four hours in A&E departments by 2027.
+
+The project proposes data-driven management recommendations including dynamic resource allocation, predictive staffing models, AI-assisted patient prioritisation systems, and operational monitoring dashboards to improve patient flow and NHS operational efficiency.
+
+---
+
+# Introduction
+
+The NHS remains one of the most important public healthcare systems in the UK, operating under the principles of universal healthcare and free access at the point of delivery. However, increasing pressure on emergency departments has created severe operational challenges, particularly regarding patient waiting times.
+
+The four-hour A&E standard introduced by the UK government aimed to ensure that 95% of patients were admitted, transferred, treated, or discharged within four hours. However, the NHS has failed to meet this target nationally since 2013.
+
+Long waiting times negatively impact:
+
+* patient outcomes
+* quality of care
+* patient satisfaction
+* operational efficiency
+* hospital sustainability
+
+This project investigates the root causes of prolonged waiting times and explores how business analytics techniques can support better patient flow management and healthcare decision-making.
+
+---
+
+# Project Objectives
+
+The primary objectives of this project were:
+
+* analyse the current state of NHS A&E waiting times
+* identify key operational bottlenecks contributing to delays
+* evaluate demographic and resource-related factors affecting waiting times
+* apply predictive analytics techniques to forecast future patient demand
+* propose data-driven management strategies to improve patient flow
+
+---
+
+# Data Collection and Dataset
+
+The project used publicly available NHS England and NHS Digital datasets collected between 2016 and 2023.
+
+## Dataset Characteristics
+
+* 88 variables
+* 704 observations
+* longitudinal NHS operational data
+
+## Included Variables
+
+### Operational Metrics
+
+* A&E waiting times
+* total attendances
+* patients waiting over four hours
+* bed occupancy levels
+* available hospital beds
+* workforce statistics
+
+### Demographic Variables
+
+* age groups
+* gender
+* ethnicity
+* deprivation levels
+
+### Department Variables
+
+* Type 1 Consultant-led A&E
+* Type 2 Single-specialty A&E
+* Type 3 & 4 Minor Injury Units
+
+---
+
+# Data Preprocessing
+
+Data cleaning and preprocessing were conducted using Microsoft Excel and R.
+
+The preprocessing workflow included:
+
+* compiling datasets from multiple NHS sources
+* handling missing values
+* restructuring variables into broader analytical categories
+* transforming variables for non-linear regression analysis
+* correlation assessment
+* time-series preparation
+
+Several R packages were used including:
+
+* dplyr
+* tidyr
+* ggplot2
+* forecast
+* tseries
+
+The dependent variable representing patients waiting over four hours was log-transformed prior to regression analysis.
+
+---
+
+# Methodology
+
+The project combined descriptive, inferential, predictive, and prescriptive analytics techniques.
+
+## Descriptive Analytics
+
+Descriptive analysis was used to examine:
+
+* historical waiting time performance
+* patient demographics
+* operational trends
+* hospital capacity pressures
+
+## Correlation Analysis
+
+A Spearman correlation matrix was developed to assess relationships between operational variables and waiting time performance.
+
+## Multiple Regression Analysis
+
+Non-linear multiple regression models were used to determine which operational and demographic variables significantly contributed to prolonged waiting times.
+
+Regression models examined:
+
+* workforce levels
+* bed occupancy
+* deprivation levels
+* age groups
+* gender
+* ethnicity
+* department type
+
+## Time-Series Forecasting
+
+Seasonal ARIMA (SARIMA) modelling was applied to forecast future NHS A&E delays.
+
+The forecasting process included:
+
+* trend analysis
+* seasonality decomposition
+* stationarity testing
+* SARIMA diagnostics
+* future demand forecasting
+
+---
+
+# Key Findings
+
+## 1. Bed Occupancy Significantly Increased Delays
+
+Regression analysis identified bed occupancy as one of the strongest operational bottlenecks contributing to prolonged waiting times.
+
+Hospitals operating near full capacity experienced significantly longer delays due to restricted patient flow and overcrowding.
+
+## 2. Workforce Shortages Worsened Waiting Times
+
+Lower workforce availability strongly correlated with increased waiting times, particularly during high-demand periods.
+
+The findings suggest that staffing shortages continue to place severe operational strain on NHS emergency departments.
+
+## 3. Demographic Disparities Were Identified
+
+The analysis found significant relationships between waiting times and:
+
+* older age groups
+* gender
+* ethnicity
+* deprivation levels
+
+Older adults and patients from more deprived areas were more likely to experience prolonged waiting times.
+
+## 4. Seasonal Demand Pressures Intensified Delays
+
+Time-series analysis identified clear seasonal patterns, particularly during winter periods associated with respiratory illnesses and increased emergency demand.
+
+## 5. Forecasting Predicts Continued Operational Pressure
+
+SARIMA forecasting predicted a continued rise in patient delays.
+
+Forecasts estimated that by 2027:
+
+* over 800,000 patients per month could wait longer than four hours in A&E
+* seasonal surges will continue increasing operational pressure
+* current management approaches may become increasingly unsustainable
+
+---
+
+# Visual Analytics
+
+The project produced multiple analytical outputs including:
+
+* correlation matrices
+* regression models
+* decomposition analysis
+* SARIMA forecasting models
+* operational trend visualisations
+
+Key figures included:
+
+* historical NHS waiting time trends
+* bed occupancy analysis
+* demographic regression outputs
+* forecasting models through 2027
+
+---
+
+# Recommendations
+
+## Dynamic Resource Allocation
+
+Implement real-time operational dashboards monitoring:
+
+* bed occupancy
+* patient arrivals
+* staffing levels
+* emergency demand patterns
+
+This would support faster operational decision-making during peak demand periods.
+
+## Predictive Workforce Planning
+
+Forecasting models should be used to predict seasonal demand surges and optimise staffing allocation.
+
+Flexible staffing strategies and emergency staffing pools may reduce pressure during winter periods.
+
+## AI-Assisted Patient Prioritisation
+
+Machine learning-assisted triage systems could improve patient prioritisation based on:
+
+* clinical urgency
+* medical history
+* presenting symptoms
+
+This may reduce inequities and improve patient flow efficiency.
+
+## Patient Education and Demand Management
+
+Public education campaigns encouraging use of:
+
+* GP services
+* telemedicine
+* minor injury units
+
+could reduce unnecessary A&E attendance.
+
+---
+
+# Limitations
+
+Several limitations affected the project:
+
+* reliance on secondary NHS data
+* limited access to individual-level patient information
+* inability to assess qualitative staff experiences
+* operational variables difficult to quantify consistently
+* forecasting uncertainty due to changing healthcare conditions
+
+Despite these limitations, the project provided meaningful operational and predictive insights into NHS emergency department performance.
+
+---
+
+# Conclusion
+
+This project demonstrated how business analytics tools and forecasting techniques can be applied to address operational challenges within NHS emergency departments.
+
+The analysis identified workforce shortages, bed occupancy pressure, demographic inequalities, and seasonal demand fluctuations as major contributors to prolonged waiting times.
+
+Forecasting analysis predicts continued operational pressure within NHS A&E departments unless strategic intervention occurs.
+
+By integrating predictive analytics, operational monitoring systems, and data-driven management strategies, the NHS may improve patient flow, reduce delays, and strengthen long-term healthcare sustainability.
+
+The project highlights the growing importance of business analytics within healthcare operations and demonstrates how data-driven decision-making can support public sector performance improvement.
+
+---
+
+# Technologies and Tools Used
+
+* R
+* RStudio
+* Excel
+* ggplot2
+* forecast package
+* tseries
+* dplyr
+* tidyr
+* Statistical Modelling
+* Time-Series Forecasting
+* Regression Analysis
+
+---
+
+# Repository Contents
+
+```text
+reports/        → Project report and dissertation
+figures/        → Forecasting models and analytical visualisations
+code/           → R scripts and analytical workflows
+data/           → NHS operational datasets
+references/     → Research sources and supporting literature
+```
