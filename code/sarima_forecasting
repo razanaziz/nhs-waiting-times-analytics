@@ -1,0 +1,55 @@
+## SARIMA MODEL
+
+install.packages("forecast")
+install.packages("tseries")
+library(forecast)
+library(tseries)
+
+## 2nd attempt at trend analysis
+
+# Load required libraries
+library(readr)
+library(forecast)
+
+# Import the data
+waiting_time <- read.csv("C:/Users/rosi_/OneDrive/Desktop/oxford brookes/thesis datasets/Waiting time/waiting_time.csv")
+
+# Convert to a time series object
+data_ts <- ts(waiting_time$patients_waiting_over_4_hours, 
+              start = c(2011, 1), 
+              frequency = 12) # Monthly data
+
+# Plot the time series
+plot(data_ts, main = "Monthly No. of Patients Waiting Over 4 Hours", 
+     ylab = "Patients", xlab = "Time")
+
+decomposed <- decompose(data_ts)
+
+# Plot the decomposition
+plot(decomposed)
+
+# Perform SARIMA modeling
+sarima_model <- auto.arima(data_ts, seasonal = TRUE)
+summary(sarima_model)
+
+# Diagnostic plots for the SARIMA model
+checkresiduals(sarima_model)
+
+# Forecast for the next 12 periods (e.g., months or years)
+sarima_forecast <- forecast(sarima_model, h = 36)
+
+# Plot the forecast
+plot(sarima_forecast)
+
+## alternative seasonal order 
+
+model_new <- Arima(data_ts, order = c(0, 1, 0), 
+                   seasonal = list(order = c(1, 1, 1), period = 12))
+
+# Check summary of the new model
+summary(model_new)
+
+# Plot residuals of the new model
+checkresiduals(model_new)
+
+
